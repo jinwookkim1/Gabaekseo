@@ -7,37 +7,62 @@
     tools:context=".LobbyActivity"
     android:background="#FFC107">
 
-
     <ImageView
+        android:id="@+id/lb_iv"
         android:layout_width="250dp"
         android:layout_height="180dp"
-        android:layout_centerInParent="true"
-        android:layout_centerVertical="true"
-        android:src="@drawable/icon1" />
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="200dp"
+        android:layout_marginLeft="80dp"
+        android:src="@drawable/icon1"/>
 
+    <TextView
+        android:id="@+id/go_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/lb_iv"
+        android:layout_marginLeft="130dp"
+        android:layout_marginTop="30dp"
+        android:fontFamily="@font/baskinrobbins_b"
+        android:gravity="center"
+        android:text="가자, 백구!"
+        android:textColor="#ffffffff"
+        android:textSize="50sp"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/go_tv"
+        android:layout_marginLeft="150dp"
+        android:layout_marginTop="-2dp"
+        android:fontFamily="@font/baskinrobbins_b"
+        android:gravity="center"
+        android:text="SEOUL!"
+        android:textColor="#ffffffff"
+        android:textSize="50sp"
+        android:textStyle="bold" />
+
+    <com.kakao.usermgmt.LoginButton
+        android:id="@+id/kao_id"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="80dp"/>
 
     <Button
-        android:layout_width="180dp"
+        android:id="@+id/nogin"
+        android:layout_width="350dp"
         android:layout_height="wrap_content"
-        android:text="로그인"
+        android:background="@drawable/button_lb"
+        android:text="비회원으로 시작하기"
         android:layout_alignParentBottom="true"
-        android:layout_margin="16dp"/>
-
-    <Button
-        android:layout_width="180dp"
-        android:layout_height="wrap_content"
-        android:text="회원가입"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:layout_margin="16dp"/>
-
-    <Button
-        android:layout_width="180dp"
-        android:layout_height="wrap_content"
-        android:text="회원가입"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:layout_margin="16dp"/>
+        android:layout_centerHorizontal="true"
+        android:textStyle="bold"
+        android:textSize="17sp"
+        android:layout_marginBottom="16dp"
+        android:onClick="clicknogin"/>
 
 
 

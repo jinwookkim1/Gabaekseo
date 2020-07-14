@@ -13,50 +13,26 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.TextView;
 import android.widget.Toast;
 
-import com.bumptech.glide.Glide;
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.tabs.TabLayout;
-import com.kakao.auth.ISessionCallback;
-import com.kakao.auth.Session;
-import com.kakao.network.ErrorResult;
 import com.kakao.usermgmt.UserManagement;
-import com.kakao.usermgmt.callback.LogoutResponseCallback;
-import com.kakao.usermgmt.callback.MeV2ResponseCallback;
-import com.kakao.usermgmt.response.MeV2Response;
-import com.kakao.usermgmt.response.model.Profile;
-import com.kakao.usermgmt.response.model.UserAccount;
-import com.kakao.util.exception.KakaoException;
 
-import de.hdodenhof.circleimageview.CircleImageView;
-
-public class MainActivity extends AppCompatActivity {
+public class BeMainActivity extends AppCompatActivity {
 
     SearchView searchView;
     DrawerLayout drawerLayout;
     NavigationView navigationView;
 
-    TextView tvName;
-    CircleImageView iv;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_be_main);
 
         drawerLayout = findViewById(R.id.drawer_view);
         navigationView = findViewById(R.id.nv_view);
-
-        View headerView = navigationView.getHeaderView(0);
-        tvName = headerView.findViewById(R.id.user_name);
-        iv = headerView.findViewById(R.id.cv_img);
-
-        tvName.setText(G.nickName);
-        Glide.with(this).load(G.imgUrl).into(iv);
-
-
 
         navigationView.setItemIconTintList(null);
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
@@ -65,21 +41,15 @@ public class MainActivity extends AppCompatActivity {
                 int id = menuItem.getItemId();
                 switch (id){
                     case R.id.favorites:
-                        Toast.makeText(MainActivity.this, "내 즐겨찾기로 이동", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(BeMainActivity.this, "로그인 후 이용할 수 있는 서비스입니다.", Toast.LENGTH_SHORT).show();
                         break;
 
                     case R.id.my_reviews:
-                        Toast.makeText(MainActivity.this, "내가 작성한 리뷰로 이동", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(BeMainActivity.this, "로그인 후 이용할 수 있는 서비스입니다.", Toast.LENGTH_SHORT).show();
                         break;
 
                     case R.id.my_info:
-                        Toast.makeText(MainActivity.this, "로그아웃되었습니다.", Toast.LENGTH_SHORT).show();
-                        UserManagement.getInstance().requestLogout(new LogoutResponseCallback() {
-                            @Override
-                            public void onCompleteLogout() {
-                                startActivity(new Intent(MainActivity.this, LobbyActivity.class) );
-                            }
-                        });
+                        Toast.makeText(BeMainActivity.this, "로그인 후 이용할 수 있는 서비스입니다.", Toast.LENGTH_SHORT).show();
                         break;
                 }
 
@@ -88,6 +58,8 @@ public class MainActivity extends AppCompatActivity {
                 return false;
             }
         });
+
+
 
         getSupportActionBar().setDisplayShowTitleEnabled(false);
         getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
@@ -103,17 +75,23 @@ public class MainActivity extends AppCompatActivity {
         tabs.addTab(tabs.newTab().setText("동물병원"));
         tabs.setTabGravity(tabs.GRAVITY_FILL);
 
-        final ViewPager viewPager = findViewById(R.id.viewpager);
+        final ViewPager viewPager = (ViewPager)findViewById(R.id.viewpager);
         final MyButtonAdapter myButtonAdapter = new MyButtonAdapter(getSupportFragmentManager(), 5);
         viewPager.setAdapter(myButtonAdapter);
+
         tabs.addOnTabSelectedListener(new TabLayout.ViewPagerOnTabSelectedListener(viewPager));
         viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabs));
-
 
         ActionBar actionBar = getSupportActionBar();
         actionBar.show();
 
+
+        Intent intent = getIntent();
+
+
+
     }
+
 
 
 
@@ -131,7 +109,7 @@ public class MainActivity extends AppCompatActivity {
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
-                Toast.makeText(MainActivity.this, query+"를 검색했습니다.", Toast.LENGTH_SHORT).show();
+                Toast.makeText(BeMainActivity.this, query+"를 검색했습니다.", Toast.LENGTH_SHORT).show();
 
                 return false;
             }
@@ -157,5 +135,3 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 }
-
-

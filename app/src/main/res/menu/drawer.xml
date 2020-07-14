@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="My Page">
+
+        <menu>
+            <item android:id="@+id/favorites"
+                android:title="나의 즐겨찾기"
+                android:icon="@drawable/ic_star_black_24dp"/>
+
+            <item android:id="@+id/my_reviews"
+                android:title="내가 작성한 리뷰"
+                android:icon="@drawable/ic_border_color_black_24dp"/>
+
+            <item android:id="@+id/my_info"
+                android:title="로그아웃"
+                android:icon="@drawable/ic_vpn_key_black_24dp"/>
+        </menu>
+
+
+
+
+    </item>
+
+
+
+
+
+
+</menu>
