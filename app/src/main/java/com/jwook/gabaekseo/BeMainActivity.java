@@ -69,7 +69,7 @@ public class BeMainActivity extends AppCompatActivity {
 
         TabLayout tabs = (TabLayout) findViewById(R.id.tabs);
         tabs.addTab(tabs.newTab().setText("공 원"));
-        tabs.addTab(tabs.newTab().setText("까 페"));
+        tabs.addTab(tabs.newTab().setText("카 페"));
         tabs.addTab(tabs.newTab().setText("음식점"));
         tabs.addTab(tabs.newTab().setText("숙 소"));
         tabs.addTab(tabs.newTab().setText("동물병원"));
