@@ -5,10 +5,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     app:cardCornerRadius="8dp"
     app:contentPaddingTop="4dp"
-    android:layout_marginTop="16dp"
+    android:layout_marginTop="10dp"
     android:layout_marginBottom="4dp"
-    android:layout_marginLeft="16dp"
-    android:layout_marginRight="16dp">
+    android:layout_marginLeft="10dp"
+    android:layout_marginRight="10dp">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -16,18 +16,49 @@
 
 
         <ImageView
+            android:layout_margin="8dp"
             android:id="@+id/recycle_iv"
-            android:layout_width="200dp"
-            android:layout_height="130dp"/>
+            android:layout_width="170dp"
+            android:layout_height="135dp"
+            android:scaleType="fitXY"/>
 
         <TextView
-            android:id="@+id/recycle_tv"
+            android:id="@+id/recycle_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_toRightOf="@id/recycle_iv"
-            android:text="dasfdafdf"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginLeft="16dp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/recycle_add"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/recycle_iv"
+            android:layout_below="@id/recycle_name"
+            android:layout_marginTop="16dp"
             android:layout_marginLeft="16dp"/>
+
+        <TextView
+            android:id="@+id/recycle_tel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/recycle_iv"
+            android:layout_below="@id/recycle_add"
+            android:layout_marginTop="16dp"
+            android:layout_marginLeft="16dp"/>
+
+        <TextView
+            android:id="@+id/recycle_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/recycle_iv"
+            android:layout_below="@id/recycle_tel"
+            android:layout_marginTop="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginBottom="16dp"
+            />
 
 
     </RelativeLayout>

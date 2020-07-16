@@ -95,7 +95,7 @@ public class MainActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_dehaze_black_24dp);
 
-        TabLayout tabs = (TabLayout) findViewById(R.id.tabs);
+        TabLayout tabs = findViewById(R.id.tabs);
         tabs.addTab(tabs.newTab().setText("공 원"));
         tabs.addTab(tabs.newTab().setText("카 페"));
         tabs.addTab(tabs.newTab().setText("음식점"));

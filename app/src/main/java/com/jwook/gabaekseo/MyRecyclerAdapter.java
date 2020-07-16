@@ -10,6 +10,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import java.util.ArrayList;
 
 public class MyRecyclerAdapter extends RecyclerView.Adapter {
@@ -22,7 +23,6 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter {
         this.items = items;
 
     }
-
 
     @NonNull
     @Override
@@ -39,8 +39,11 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter {
         VH vh = (VH)holder;
 
         Item item = items.get(position);
-        vh.recycleiv.setImageResource(item.imgURL);
-        vh.recycletv.setText(item.name);
+        Glide.with(context).load(item.url).into(vh.recycleiv);
+        vh.recyclename.setText(item.name);
+        vh.recycleaddress.setText(item.address);
+        vh.recycletel.setText(item.tel);
+        vh.recycletime.setText(item.time);
     }
 
     @Override
@@ -50,14 +53,22 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter {
 
     class VH extends RecyclerView.ViewHolder{
 
+        TextView recyclename;
+        TextView recycleaddress;
+        TextView recycletel;
+        TextView recycletime;
         ImageView recycleiv;
-        TextView recycletv;
 
-        public VH(@NonNull View itemView) {
+        public VH(@NonNull final View itemView) {
             super(itemView);
 
             recycleiv = itemView.findViewById(R.id.recycle_iv);
-            recycletv = itemView.findViewById(R.id.recycle_tv);
+            recyclename = itemView.findViewById(R.id.recycle_name);
+            recycleaddress = itemView.findViewById(R.id.recycle_add);
+            recycletel = itemView.findViewById(R.id.recycle_tel);
+            recycletime = itemView.findViewById(R.id.recycle_time);
+
+
 
 
         }
