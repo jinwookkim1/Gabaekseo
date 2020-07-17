@@ -8,39 +8,24 @@ import androidx.fragment.app.FragmentPagerAdapter;
 public class MyButtonAdapter extends FragmentPagerAdapter {
 
     int ButtonTabs;
+    Fragment[] tabs= new Fragment[5];
 
     public MyButtonAdapter(@NonNull FragmentManager fm, int numTabs) {
         super(fm, numTabs);
         this.ButtonTabs = numTabs;
+
+        tabs[0]= new Fragment_1();
+        tabs[1]= new Fragment_2();
+        tabs[2]= new Fragment_3();
+        tabs[3]= new Fragment_4();
+        tabs[4]= new Fragment_5();
     }
 
 
     @NonNull
     @Override
     public Fragment getItem(int position) {
-
-        switch (position){
-            case 0:
-                Fragment_1 tab1 = new Fragment_1();
-                return tab1;
-            case 1:
-                Fragment_2 tab2 = new Fragment_2();
-                return tab2;
-            case 2:
-                Fragment_3 tab3 = new Fragment_3();
-                return tab3;
-            case 3:
-                Fragment_4 tab4 = new Fragment_4();
-                return tab4;
-            case 4:
-                Fragment_5 tab5 = new Fragment_5();
-                return tab5;
-
-            default:
-                return null;
-
-        }
-        //return null;
+        return tabs[position];
     }
 
     @Override

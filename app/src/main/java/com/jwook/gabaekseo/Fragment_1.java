@@ -7,9 +7,11 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.google.gson.Gson;
@@ -30,31 +32,25 @@ public class Fragment_1 extends Fragment {
 
 
     ArrayList<Item> arrayList = new ArrayList<>();
-    MyRecyclerAdapter recyclerAdapter;
+    MyRecyclerAdapter pkrecyclerAdapter;
     RecyclerView recyclerView;
 
-    public Fragment_1() {
-        // Required empty public constructor
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        parklist();
     }
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_1, container, false);
         recyclerView = view.findViewById(R.id.recycle);
-        recyclerAdapter = new MyRecyclerAdapter(getActivity(), arrayList);
-        recyclerView.setAdapter(recyclerAdapter);
+        pkrecyclerAdapter = new MyRecyclerAdapter(getActivity(), arrayList);
+        recyclerView.setAdapter(pkrecyclerAdapter);
         return view;
     }
 
-    @Override
-    public void onResume() {
-        super.onResume();
-
-        parklist();
-
-    }
 
     public void parklist(){
         final String serverUrl = "http://refoz.dothome.co.kr/gabaekseo/parklist.json";
@@ -67,7 +63,7 @@ public class Fragment_1 extends Fragment {
                     @Override
                     public void run() {
                         arrayList.clear();
-                        recyclerAdapter.notifyDataSetChanged();
+                        pkrecyclerAdapter.notifyDataSetChanged();
                     }
                 });
 
@@ -82,27 +78,35 @@ public class Fragment_1 extends Fragment {
                     InputStream is = connection.getInputStream();
                     InputStreamReader isr = new InputStreamReader(is);
                     Gson gson = new Gson();
-                    Item[] items = gson.fromJson(isr, Item[].class);
+                    final Item[] items = gson.fromJson(isr, Item[].class);
 
-                    for(Item item: items){
-                        arrayList.add(item);
-                    }
+//                    for(Item item: items){
+//                        arrayList.add(item);
+//                    }
 
                     //리사이클러뷰를 갱신
                     getActivity().runOnUiThread(new Runnable() {
                        @Override
                         public void run() {
-                            recyclerAdapter.notifyDataSetChanged();
+                           for(Item item: items){
+                               arrayList.add(item);
+                               pkrecyclerAdapter.notifyItemInserted(arrayList.size()-1);
+                           }
                         }
                    });
-
-
 
 
                 } catch (MalformedURLException e) {
                     e.printStackTrace();
                 } catch (IOException e) {
                     e.printStackTrace();
+                } catch (Exception e){
+                    getActivity().runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            Toast.makeText(getContext(), "서버상태가 좋지 않습니다. 다시 실행해 주세요", Toast.LENGTH_SHORT).show();
+                        }
+                    });
                 }
 
             }
