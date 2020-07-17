@@ -75,6 +75,7 @@ public class Fragment_1 extends Fragment {
                     connection.setDoOutput(true);
                     connection.setUseCaches(false);
 
+
                     InputStream is = connection.getInputStream();
                     InputStreamReader isr = new InputStreamReader(is);
                     Gson gson = new Gson();
