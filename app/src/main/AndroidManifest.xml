@@ -13,11 +13,15 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
+        <activity android:name=".InfoActivity"></activity>
+        <activity android:name=".PkinfoActivity" />
+        <activity android:name=".SecondActivity" />
         <activity android:name=".BeMainActivity" />
         <activity android:name=".LoginActivity" />
         <activity android:name=".LobbyActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

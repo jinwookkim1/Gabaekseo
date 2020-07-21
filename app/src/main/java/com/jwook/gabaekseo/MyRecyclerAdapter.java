@@ -1,6 +1,8 @@
 package com.jwook.gabaekseo;
 
+import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -34,28 +36,38 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter {
         View itemView = inflater.inflate(R.layout.recycler_item, parent, false);
 
         VH holder = new VH(itemView);
-
-
-        itemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(context, "click", Toast.LENGTH_SHORT).show();
-            }
-        });
-
         return holder;
     }
 
     @Override
-    public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, final int position) {
         VH vh = (VH)holder;
 
-        Item item = items.get(position);
+        final Item item = items.get(position);
         Glide.with(context).load(item.url).into(vh.recycleiv);
         vh.recyclename.setText(item.name);
         vh.recycleaddress.setText(item.address);
         vh.recycletel.setText(item.tel);
         vh.recycletime.setText(item.time);
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Toast.makeText(context, "1111", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(v.getContext(), InfoActivity.class);
+                (context).startActivity(intent);
+
+                intent.putExtra("name", item.name);
+                intent.putExtra("address", item.address);
+                intent.putExtra("tel", item.tel);
+                intent.putExtra("time", item.time);
+                intent.putExtra("url", item.url);
+
+
+
+            }
+        });
 
 
     }
