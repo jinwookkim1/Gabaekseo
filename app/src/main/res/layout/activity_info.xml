@@ -6,98 +6,12 @@
     android:layout_height="match_parent"
     tools:context=".InfoActivity">
 
-    <RelativeLayout
-        android:id="@+id/list_view"
+    <TextView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <TextView
-            android:id="@+id/info_tv"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="★즐겨찾기 등록"
-            android:textSize="18sp"
-            android:layout_alignParentRight="true"
-            android:layout_marginRight="20dp"
-            android:layout_marginTop="8dp"/>
-
-        <ImageView
-            android:layout_marginTop="30dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginRight="8dp"
-            android:layout_marginBottom="8dp"
-            android:id="@+id/info_iv"
-            android:layout_width="170dp"
-            android:layout_height="135dp"
-            android:scaleType="fitXY"/>
-
-        <TextView
-            android:id="@+id/info_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_toRightOf="@id/info_iv"
-            android:layout_marginTop="36dp"
-            android:layout_marginLeft="16dp"
-            android:text="dddd"
-            android:textStyle="bold"/>
-
-        <TextView
-            android:id="@+id/info_add"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_toRightOf="@id/info_iv"
-            android:layout_below="@id/info_name"
-            android:layout_marginTop="16dp"
-            android:text="dddd"
-            android:layout_marginLeft="16dp"/>
-
-        <TextView
-            android:id="@+id/info_tel"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_toRightOf="@id/info_iv"
-            android:layout_below="@id/info_add"
-            android:layout_marginTop="16dp"
-            android:text="dddd"
-            android:layout_marginLeft="16dp"/>
-
-        <TextView
-            android:id="@+id/info_time"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_toRightOf="@id/info_iv"
-            android:layout_below="@id/info_tel"
-            android:layout_marginTop="16dp"
-            android:layout_marginLeft="16dp"
-            android:text="dddd"
-            android:layout_marginBottom="16dp"
-            />
-        <TextView
-            android:id="@+id/map_tv"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="지 도"
-            android:layout_below="@id/info_iv"
-            android:layout_marginTop="8dp"
-            android:layout_marginLeft="8dp"
-            android:textSize="20sp"/>
-
-        <fragment
-            android:id="@+id/map"
-            android:layout_margin="8dp"
-            android:layout_width="400dp"
-            android:layout_height="210dp"
-            android:layout_below="@id/map_tv"
-            />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="리 뷰"/>
+        android:layout_height="match_parent"
+        android:text="dafdaf"/>
 
 
-
-    </RelativeLayout>
 
 
 </RelativeLayout>

@@ -58,12 +58,6 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter {
                 Intent intent = new Intent(v.getContext(), InfoActivity.class);
                 (context).startActivity(intent);
 
-                intent.putExtra("name", item.name);
-                intent.putExtra("address", item.address);
-                intent.putExtra("tel", item.tel);
-                intent.putExtra("time", item.time);
-                intent.putExtra("url", item.url);
-
 
 
             }
