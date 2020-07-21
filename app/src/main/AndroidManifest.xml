@@ -13,7 +13,6 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".MyFavActivity"></activity>
         <activity android:name=".BeMainActivity" />
         <activity android:name=".LoginActivity" />
         <activity android:name=".LobbyActivity">

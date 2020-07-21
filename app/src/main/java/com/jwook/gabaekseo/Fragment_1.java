@@ -52,6 +52,8 @@ public class Fragment_1 extends Fragment {
     }
 
 
+
+
     public void parklist(){
         final String serverUrl = "http://refoz.dothome.co.kr/gabaekseo/parklist.json";
 

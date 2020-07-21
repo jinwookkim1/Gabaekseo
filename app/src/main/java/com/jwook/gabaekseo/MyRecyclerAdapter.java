@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -18,9 +19,11 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter {
     Context context;
     ArrayList<Item> items;
 
+
     public MyRecyclerAdapter(Context context, ArrayList<Item> items){
         this.context = context;
         this.items = items;
+
 
     }
 
@@ -31,6 +34,15 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter {
         View itemView = inflater.inflate(R.layout.recycler_item, parent, false);
 
         VH holder = new VH(itemView);
+
+
+        itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(context, "click", Toast.LENGTH_SHORT).show();
+            }
+        });
+
         return holder;
     }
 
@@ -44,6 +56,8 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter {
         vh.recycleaddress.setText(item.address);
         vh.recycletel.setText(item.tel);
         vh.recycletime.setText(item.time);
+
+
     }
 
     @Override
@@ -67,8 +81,6 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter {
             recycleaddress = itemView.findViewById(R.id.recycle_add);
             recycletel = itemView.findViewById(R.id.recycle_tel);
             recycletime = itemView.findViewById(R.id.recycle_time);
-
-
 
 
         }
