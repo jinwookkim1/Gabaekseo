@@ -75,7 +75,7 @@ public class BeMainActivity extends AppCompatActivity {
         tabs.addTab(tabs.newTab().setText("동물병원"));
         tabs.setTabGravity(tabs.GRAVITY_FILL);
 
-        final ViewPager viewPager = (ViewPager)findViewById(R.id.viewpager);
+        final ViewPager viewPager = findViewById(R.id.viewpager);
         final MyButtonAdapter myButtonAdapter = new MyButtonAdapter(getSupportFragmentManager(), 5);
         viewPager.setAdapter(myButtonAdapter);
 
@@ -85,8 +85,6 @@ public class BeMainActivity extends AppCompatActivity {
         ActionBar actionBar = getSupportActionBar();
         actionBar.show();
 
-
-        Intent intent = getIntent();
 
 
 

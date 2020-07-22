@@ -11,18 +11,20 @@
             android:layout_height="wrap_content">
 
             <ImageView
-                android:layout_margin="8dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="8dp"
                 android:id="@+id/info_iv"
                 android:layout_width="170dp"
-                android:layout_height="135dp"
-                android:scaleType="fitXY"/>
+                android:layout_height="145dp"
+                android:scaleType="centerCrop"/>
 
             <TextView
                 android:id="@+id/info_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_toRightOf="@id/info_iv"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="20dp"
+                android:text="name"
                 android:layout_marginLeft="16dp"
                 android:textStyle="bold"/>
 
@@ -33,6 +35,7 @@
                 android:layout_toRightOf="@id/info_iv"
                 android:layout_below="@id/info_name"
                 android:layout_marginTop="16dp"
+                android:text="address"
                 android:layout_marginLeft="16dp"/>
 
             <TextView
@@ -42,6 +45,7 @@
                 android:layout_toRightOf="@id/info_iv"
                 android:layout_below="@id/info_add"
                 android:layout_marginTop="16dp"
+                android:text="tel"
                 android:layout_marginLeft="16dp"/>
 
             <TextView
@@ -50,37 +54,31 @@
                 android:layout_height="wrap_content"
                 android:layout_toRightOf="@id/info_iv"
                 android:layout_below="@id/info_tel"
-                android:layout_marginTop="16dp"
+                android:text="time"
+                android:layout_marginTop="10dp"
                 android:layout_marginLeft="16dp"
-                android:layout_marginBottom="16dp"
+                android:layout_alignBottom="@id/info_iv"
                 />
 
             <TextView
-                android:id="@+id/info_tv"
+                android:id="@+id/info_tv1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="지 도"
                 android:layout_below="@id/info_iv"
-                android:textSize="30sp"
-                android:layout_margin="8dp"
-                />
-
+                android:layout_marginLeft="8dp"
+                android:textSize="30sp"/>
             <fragment
                 android:id="@+id/map"
                 android:layout_width="395dp"
                 android:layout_height="200dp"
-                android:layout_below="@id/info_tv"
+                android:layout_below="@id/info_tv1"
                 android:layout_marginLeft="8dp"
-                />
+                android:name="com.google.android.gms.maps.SupportMapFragment"/>
 
-            <TextView
-                android:id="@+id/info_tv2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Review"
-                android:layout_below="@id/map"
-                android:textSize="30sp"
-                android:layout_margin="10dp"/>
+
+
+
 
         </RelativeLayout>
 

@@ -54,9 +54,16 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter {
             @Override
             public void onClick(View v) {
 
-                Toast.makeText(context, "1111", Toast.LENGTH_SHORT).show();
+
                 Intent intent = new Intent(v.getContext(), InfoActivity.class);
-                (context).startActivity(intent);
+                intent.putExtra("name", item.name);
+                intent.putExtra("address", item.address);
+                intent.putExtra("tel", item.tel);
+                intent.putExtra("time", item.time);
+                intent.putExtra("url", item.url);
+                intent.putExtra("x", item.x);
+                intent.putExtra("y", item.y);
+                context.startActivity(intent);
 
 
 

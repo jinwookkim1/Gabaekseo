@@ -19,8 +19,8 @@
             android:layout_margin="8dp"
             android:id="@+id/recycle_iv"
             android:layout_width="170dp"
-            android:layout_height="135dp"
-            android:scaleType="fitXY"/>
+            android:layout_height="145dp"
+            android:scaleType="centerCrop"/>
 
         <TextView
             android:id="@+id/recycle_name"
@@ -55,9 +55,9 @@
             android:layout_height="wrap_content"
             android:layout_toRightOf="@id/recycle_iv"
             android:layout_below="@id/recycle_tel"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="10dp"
             android:layout_marginLeft="16dp"
-            android:layout_marginBottom="16dp"
+            android:layout_alignBottom="@id/recycle_iv"
             />
 
 
