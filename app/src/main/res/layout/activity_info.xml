@@ -1,74 +1,70 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".InfoActivity">
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-        
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
             <ImageView
                 android:layout_margin="8dp"
-                android:id="@+id/lnfo_iv"
+                android:id="@+id/info_iv"
                 android:layout_width="170dp"
                 android:layout_height="135dp"
                 android:scaleType="fitXY"/>
 
             <TextView
-                android:id="@+id/lnfo_name"
+                android:id="@+id/info_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_toRightOf="@id/lnfo_iv"
+                android:layout_toRightOf="@id/info_iv"
                 android:layout_marginTop="16dp"
                 android:layout_marginLeft="16dp"
                 android:textStyle="bold"/>
 
             <TextView
-                android:id="@+id/lnfo_add"
+                android:id="@+id/info_add"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_toRightOf="@id/lnfo_iv"
-                android:layout_below="@id/lnfo_name"
+                android:layout_toRightOf="@id/info_iv"
+                android:layout_below="@id/info_name"
                 android:layout_marginTop="16dp"
                 android:layout_marginLeft="16dp"/>
 
             <TextView
-                android:id="@+id/lnfo_tel"
+                android:id="@+id/info_tel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_toRightOf="@id/lnfo_iv"
-                android:layout_below="@id/lnfo_add"
+                android:layout_toRightOf="@id/info_iv"
+                android:layout_below="@id/info_add"
                 android:layout_marginTop="16dp"
                 android:layout_marginLeft="16dp"/>
 
             <TextView
-                android:id="@+id/lv_time"
+                android:id="@+id/info_time"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_toRightOf="@id/lnfo_iv"
-                android:layout_below="@id/lnfo_tel"
+                android:layout_toRightOf="@id/info_iv"
+                android:layout_below="@id/info_tel"
                 android:layout_marginTop="16dp"
                 android:layout_marginLeft="16dp"
                 android:layout_marginBottom="16dp"
                 />
-            
+
             <TextView
                 android:id="@+id/info_tv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="지 도"
-                android:layout_below="@id/lnfo_iv"
+                android:layout_below="@id/info_iv"
                 android:textSize="30sp"
-                android:layout_margin="10dp"
+                android:layout_margin="8dp"
                 />
-            
+
             <fragment
                 android:id="@+id/map"
                 android:layout_width="395dp"
@@ -85,16 +81,8 @@
                 android:layout_below="@id/map"
                 android:textSize="30sp"
                 android:layout_margin="10dp"/>
-            
-            
-            
-            
+
         </RelativeLayout>
 
-       
 
-
-    </ScrollView>
-
-
-</RelativeLayout>
+</ScrollView>
