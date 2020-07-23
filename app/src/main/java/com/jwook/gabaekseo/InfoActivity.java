@@ -51,7 +51,7 @@ public class InfoActivity extends AppCompatActivity {
         String url = intent.getStringExtra("url");
         final double x = intent.getDoubleExtra("x", 37.556355);
         final double y = intent.getDoubleExtra("y", 126.977929);
-        Toast.makeText(this, x+", "+y, Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, x + ", " + y, Toast.LENGTH_SHORT).show();
 
         Glide.with(this).load(url).into(iv);
         tvName.setText(name);
@@ -60,7 +60,7 @@ public class InfoActivity extends AppCompatActivity {
         tvTime.setText(time);
 
         FragmentManager fragmentManager = getSupportFragmentManager();
-        final SupportMapFragment mapFragment = (SupportMapFragment)fragmentManager.findFragmentById(R.id.map);
+        final SupportMapFragment mapFragment = (SupportMapFragment) fragmentManager.findFragmentById(R.id.map);
         mapFragment.getMapAsync(new OnMapReadyCallback() {
             @Override
             public void onMapReady(GoogleMap googleMap) {
@@ -72,21 +72,13 @@ public class InfoActivity extends AppCompatActivity {
                 markerOptions.title("Here");
                 Gmap.addMarker(markerOptions);
 
-                Gmap.animateCamera(CameraUpdateFactory.newLatLngZoom(place,15));
+                Gmap.animateCamera(CameraUpdateFactory.newLatLngZoom(place, 15));
                 UiSettings settings = Gmap.getUiSettings();
                 settings.setZoomControlsEnabled(true);
 
 
             }
         });
-
-
-
-
-
-
-
-
 
 
     }
@@ -96,15 +88,15 @@ public class InfoActivity extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.search, menu);
         MenuItem item = menu.findItem(R.id.bar_search);
-        searchView = (SearchView)item.getActionView();
+        searchView = (SearchView) item.getActionView();
         searchView.setMaxWidth(Integer.MAX_VALUE);
         searchView.setQueryHint("검색어를 입력하세요");
-        searchView.setQuery("",false);
+        searchView.setQuery("", false);
 
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
-                Toast.makeText(InfoActivity.this, query+"를 검색하였습니다.", Toast.LENGTH_SHORT).show();
+                Toast.makeText(InfoActivity.this, query + "를 검색하였습니다.", Toast.LENGTH_SHORT).show();
                 return false;
             }
 
@@ -114,6 +106,7 @@ public class InfoActivity extends AppCompatActivity {
             }
         });
 
-
+        return super.onCreateOptionsMenu(menu);
     }
+
 }
