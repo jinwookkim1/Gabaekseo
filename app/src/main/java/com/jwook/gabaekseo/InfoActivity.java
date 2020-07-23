@@ -37,6 +37,7 @@ public class InfoActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_info);
 
+
         iv = findViewById(R.id.info_iv);
         tvName = findViewById(R.id.info_name);
         tvAdd = findViewById(R.id.info_add);
@@ -80,6 +81,7 @@ public class InfoActivity extends AppCompatActivity {
             }
         });
 
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
     }
 
@@ -107,6 +109,17 @@ public class InfoActivity extends AppCompatActivity {
         });
 
         return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()){
+            case android.R.id.home:{ //toolbar의 back키 눌렀을 때 동작
+                finish();
+                return true;
+            }
+        }
+        return super.onOptionsItemSelected(item);
     }
 
 }
