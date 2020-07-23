@@ -8,6 +8,7 @@
 
 
     <TextView
+        android:id="@+id/fv_my"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="★ 나의 즐겨찾기"
@@ -16,7 +17,72 @@
         android:fontFamily="@font/baskinrobbins_b"
         />
 
-    <
+    <androidx.cardview.widget.CardView
+        android:layout_margin="8dp"
+        android:layout_below="@id/fv_my"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="8dp"
+        app:contentPadding="8dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/fv_iv"
+                android:layout_width="170dp"
+                android:layout_height="145dp"
+                android:scaleType="centerCrop"/>
+
+            <TextView
+                android:id="@+id/fv_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/fv_iv"
+                android:layout_marginTop="16dp"
+                android:layout_marginLeft="16dp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/fv_add"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/fv_iv"
+                android:layout_below="@id/fv_name"
+                android:layout_marginTop="16dp"
+                android:layout_marginLeft="16dp"/>
+
+            <TextView
+                android:id="@+id/fv_tel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/fv_iv"
+                android:layout_below="@id/fv_add"
+                android:layout_marginTop="16dp"
+                android:layout_marginLeft="16dp"/>
+
+            <TextView
+                android:id="@+id/fv_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/fv_iv"
+                android:layout_below="@id/fv_tel"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="16dp"
+                android:layout_alignBottom="@id/fv_iv"
+                />
+
+
+
+        </RelativeLayout>
+
+
+
+
+    </androidx.cardview.widget.CardView>
+
+
 
 
 

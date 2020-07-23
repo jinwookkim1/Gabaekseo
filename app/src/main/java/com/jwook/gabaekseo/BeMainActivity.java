@@ -108,6 +108,8 @@ public class BeMainActivity extends AppCompatActivity {
             @Override
             public boolean onQueryTextSubmit(String query) {
                 Toast.makeText(BeMainActivity.this, query+"를 검색했습니다.", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(BeMainActivity.this, SearchActivity.class);
+                startActivity(intent);
 
                 return false;
             }

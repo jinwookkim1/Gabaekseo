@@ -50,7 +50,7 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter {
         vh.recycletel.setText(item.tel);
         vh.recycletime.setText(item.time);
 
-        holder.itemView.setOnClickListener(new View.OnClickListener() {
+        holder.itemView.setOnClickListener( new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
