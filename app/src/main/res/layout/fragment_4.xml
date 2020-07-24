@@ -8,11 +8,7 @@
     tools:context=".Fragment_4">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="숙소"
-        android:padding="16dp"/>
+
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycle"

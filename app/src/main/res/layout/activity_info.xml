@@ -60,12 +60,28 @@
                 android:layout_alignBottom="@id/info_iv"
                 />
 
+            <Button
+                android:id="@+id/info_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/info_iv"
+                android:background="@drawable/button_lb"
+                android:text="즐겨찾기 추가"
+                android:fontFamily="@font/joongnalight"
+                android:textSize="20sp"
+                android:layout_centerHorizontal="true"
+                android:layout_margin="8dp"
+                android:onClick="clickBtn"
+
+                />
+
+
             <TextView
                 android:id="@+id/info_tv1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="지 도"
-                android:layout_below="@id/info_iv"
+                android:layout_below="@id/info_btn"
                 android:layout_marginLeft="8dp"
                 android:textSize="30sp"/>
             <fragment
