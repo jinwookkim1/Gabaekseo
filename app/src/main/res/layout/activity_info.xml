@@ -76,6 +76,14 @@
                 android:layout_marginLeft="8dp"
                 android:name="com.google.android.gms.maps.SupportMapFragment"/>
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Review"
+                android:layout_below="@id/map"
+                android:layout_marginLeft="8dp"
+                android:textSize="30sp"/>
+
 
 
 

@@ -145,38 +145,33 @@ public class MainActivity extends AppCompatActivity {
                     }
                 }
 
-                G.itemlist.clear();
-
                 //카페리스트 (Fragment2객체의 멤버변수인 arrayList객체의 요소들 중에 query 에 해당하는 글씨를 포함한 요소를 찾기)
                 Fragment_2 frag2= (Fragment_2)myButtonAdapter.tabs[1];
-                for( Item item2 : frag2.arrayList ){
-                    if( item2.name.contains(query) || item2.address.contains(query) ){
+                for( Item item1 : frag2.arrayList ){
+                    if( item1.name.contains(query) || item1.address.contains(query) ){
                         //찾은 요소를 G.itemList[SearchActivity에서 사용할 ArrayList]
-                        G.itemlist.add( item2 );
+                        G.itemlist.add( item1 );
                     }
                 }
 
-                G.itemlist.clear();
                 Fragment_3 frag3 = (Fragment_3)myButtonAdapter.tabs[2];
-                for (Item item3 : frag3.arrayList){
-                    if (item3.name.contains(query) || item3.address.contains(query)){
-                        G.itemlist.add(item3);
+                for (Item item1 : frag3.arrayList){
+                    if (item1.name.contains(query) || item1.address.contains(query)){
+                        G.itemlist.add(item1);
                     }
                 }
 
-                G.itemlist.clear();
                 Fragment_4 frag4 = (Fragment_4)myButtonAdapter.tabs[3];
-                for (Item item4 : frag4.arrayList){
-                    if (item4.name.contains(query) || item4.address.contains(query)){
-                        G.itemlist.add(item4);
+                for (Item item1 : frag4.arrayList){
+                    if (item1.name.contains(query) || item1.address.contains(query)){
+                        G.itemlist.add(item1);
                     }
                 }
 
-                G.itemlist.clear();
                 Fragment_5 frag5 = (Fragment_5)myButtonAdapter.tabs[4];
-                for (Item item5 : frag5.arrayList){
-                    if (item5.name.contains(query) || item5.address.contains(query)){
-                        G.itemlist.add(item5);
+                for (Item item1 : frag5.arrayList){
+                    if (item1.name.contains(query) || item1.address.contains(query)){
+                        G.itemlist.add(item1);
                     }
                 }
 

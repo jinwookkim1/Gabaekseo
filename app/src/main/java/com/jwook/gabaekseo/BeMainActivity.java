@@ -24,6 +24,8 @@ public class BeMainActivity extends AppCompatActivity {
     SearchView searchView;
     DrawerLayout drawerLayout;
     NavigationView navigationView;
+    MyButtonAdapter myButtonAdapter;
+
 
 
     @Override
@@ -76,7 +78,7 @@ public class BeMainActivity extends AppCompatActivity {
         tabs.setTabGravity(tabs.GRAVITY_FILL);
 
         final ViewPager viewPager = findViewById(R.id.viewpager);
-        final MyButtonAdapter myButtonAdapter = new MyButtonAdapter(getSupportFragmentManager(), 5);
+        myButtonAdapter = new MyButtonAdapter(getSupportFragmentManager(), 5);
         viewPager.setAdapter(myButtonAdapter);
 
         tabs.addOnTabSelectedListener(new TabLayout.ViewPagerOnTabSelectedListener(viewPager));
@@ -108,8 +110,44 @@ public class BeMainActivity extends AppCompatActivity {
             @Override
             public boolean onQueryTextSubmit(String query) {
                 Toast.makeText(BeMainActivity.this, query+"를 검색했습니다.", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(BeMainActivity.this, SearchActivity.class);
-                startActivity(intent);
+
+                G.itemlist.clear();
+                Fragment_1 frag1 = (Fragment_1)myButtonAdapter.tabs[0];
+                for(Item item1 : frag1.arrayList){
+                    if(item1.name.contains(query)||item1.address.contains(query)){
+                        G.itemlist.add(item1);
+                    }
+                }
+
+                Fragment_2 frag2 = (Fragment_2)myButtonAdapter.tabs[1];
+                for(Item item1 : frag2.arrayList){
+                    if(item1.name.contains(query)||item1.address.contains(query)){
+                        G.itemlist.add(item1);
+                    }
+                }
+
+                Fragment_3 frag3 = (Fragment_3)myButtonAdapter.tabs[2];
+                for(Item item1 : frag3.arrayList){
+                    if(item1.name.contains(query)||item1.address.contains(query)){
+                        G.itemlist.add(item1);
+                    }
+                }
+
+                Fragment_4 frag4 = (Fragment_4)myButtonAdapter.tabs[3];
+                for(Item item1 : frag4.arrayList){
+                    if(item1.name.contains(query)||item1.address.contains(query)){
+                        G.itemlist.add(item1);
+                    }
+                }
+
+                Fragment_5 frag5 = (Fragment_5)myButtonAdapter.tabs[4];
+                for(Item item1 : frag5.arrayList){
+                    if(item1.name.contains(query)||item1.address.contains(query)){
+                        G.itemlist.add(item1);
+                    }
+                }
+
+                startActivity(new Intent(BeMainActivity.this, SearchActivity.class));
 
                 return false;
             }
