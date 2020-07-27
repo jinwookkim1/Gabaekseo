@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#D9DCBE"
+    tools:context=".ReviewActivity">
+
+    <EditText
+        android:id="@+id/re_tv"
+        android:layout_margin="16dp"
+        android:layout_width="380dp"
+        android:layout_height="300dp"
+        android:inputType="textMultiLine|textNoSuggestions"
+        android:background="@drawable/edit_review"
+        android:hint="  리뷰를 입력하세요 : "
+        android:gravity="top"/>
+
+    <Button
+        android:id="@+id/re_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/re_tv"
+        android:background="@drawable/button_2"
+        android:text="작성 완료"
+        android:fontFamily="@font/joongnalight"
+        android:textSize="20sp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:onClick="clickRev"/>
+
+
+</LinearLayout>

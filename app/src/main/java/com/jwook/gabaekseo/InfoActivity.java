@@ -3,6 +3,7 @@ package com.jwook.gabaekseo;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
 import androidx.fragment.app.FragmentManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -89,6 +90,13 @@ public class InfoActivity extends AppCompatActivity {
     }
 
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.review, menu);
+        MenuItem item = menu.findItem(R.id.bar_review);
+        item.getActionView();
+        return super.onCreateOptionsMenu(menu);
+    }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -97,6 +105,11 @@ public class InfoActivity extends AppCompatActivity {
                 finish();
                 return true;
             }
+            case R.id.bar_review:{
+                Intent intent = new Intent(this, ReviewActivity.class);
+                startActivity(intent);
+            }
+
         }
         return super.onOptionsItemSelected(item);
     }
@@ -110,7 +123,7 @@ public class InfoActivity extends AppCompatActivity {
 
 
         SharedPreferences shared = getSharedPreferences("Data", MODE_PRIVATE);
-        String favs= shared.getString("fav", "");
+        String favs = shared.getString("fav", "");
 
         favs += name+"&"+address+"&"+tel+"&"+time+"&"+url+";";
 
@@ -120,8 +133,12 @@ public class InfoActivity extends AppCompatActivity {
 
         Toast.makeText(this, "즐겨찾기 추가완료", Toast.LENGTH_SHORT).show();
 
-
-
-
     }
+
+
+
+
+
 }
+
+
