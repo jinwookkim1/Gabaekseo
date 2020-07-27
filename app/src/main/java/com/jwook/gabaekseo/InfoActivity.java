@@ -5,7 +5,9 @@ import androidx.appcompat.widget.SearchView;
 import androidx.fragment.app.FragmentManager;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -30,6 +32,7 @@ public class InfoActivity extends AppCompatActivity {
     TextView tvTel;
     TextView tvTime;
     GoogleMap Gmap;
+    String url;
 
 
     @Override
@@ -49,7 +52,7 @@ public class InfoActivity extends AppCompatActivity {
         String address = intent.getStringExtra("address");
         String tel = intent.getStringExtra("tel");
         String time = intent.getStringExtra("time");
-        String url = intent.getStringExtra("url");
+        url = intent.getStringExtra("url");
         final double x = intent.getDoubleExtra("x", 37.556355);
         final double y = intent.getDoubleExtra("y", 126.977929);
 
@@ -99,6 +102,25 @@ public class InfoActivity extends AppCompatActivity {
     }
 
     public void clickBtn(View view) {
+
+       String name = tvName.getText().toString();
+       String address = tvAdd.getText().toString();
+       String tel = tvTel.getText().toString();
+       String time = tvTime.getText().toString();
+
+
+        SharedPreferences shared = getSharedPreferences("Data", MODE_PRIVATE);
+        String favs= shared.getString("fav", "");
+
+        favs += name+"&"+address+"&"+tel+"&"+time+"&"+url+";";
+
+        SharedPreferences.Editor editor = shared.edit();
+        editor.putString("fav", favs);
+        editor.commit();
+
+        Toast.makeText(this, "즐겨찾기 추가완료", Toast.LENGTH_SHORT).show();
+
+
 
 
     }
