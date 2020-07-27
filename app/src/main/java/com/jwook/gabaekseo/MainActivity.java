@@ -74,6 +74,8 @@ public class MainActivity extends AppCompatActivity {
 
                     case R.id.my_reviews:
                         Toast.makeText(MainActivity.this, "내가 작성한 리뷰로 이동", Toast.LENGTH_SHORT).show();
+                        Intent intent1 = new Intent(MainActivity.this, MyReviewActivity.class);
+                        startActivity(intent1);
                         break;
 
                     case R.id.my_info:

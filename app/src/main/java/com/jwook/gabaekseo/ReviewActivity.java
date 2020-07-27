@@ -29,5 +29,7 @@ public class ReviewActivity extends AppCompatActivity {
     }
 
     public void clickRev(View view) {
+
+
     }
 }
