@@ -95,10 +95,19 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:id="@+id/info_tv2"
                 android:text="Review"
                 android:layout_below="@id/map"
                 android:layout_marginLeft="8dp"
                 android:textSize="30sp"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="400dp"
+                android:layout_below="@id/info_tv2"
+                android:id="@+id/info_recycle"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                android:orientation="vertical"/>
 
 
 

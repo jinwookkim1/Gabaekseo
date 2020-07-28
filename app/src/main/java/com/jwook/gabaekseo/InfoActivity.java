@@ -1,5 +1,6 @@
 package com.jwook.gabaekseo;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
 import androidx.fragment.app.FragmentManager;
@@ -25,6 +26,8 @@ import com.google.android.gms.maps.UiSettings;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
+import java.util.ArrayList;
+
 public class InfoActivity extends AppCompatActivity {
 
     ImageView iv;
@@ -34,6 +37,10 @@ public class InfoActivity extends AppCompatActivity {
     TextView tvTime;
     GoogleMap Gmap;
     String url;
+
+    RecyclerView recyclerView;
+    MyReviewAdapter reviewAdapter;
+    ArrayList<ReItem> reItems = new ArrayList<>();
 
 
     @Override
@@ -87,8 +94,18 @@ public class InfoActivity extends AppCompatActivity {
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
+
+
+        reviewAdapter = new MyReviewAdapter(this, reItems);
+        recyclerView = findViewById(R.id.info_recycle);
+        recyclerView.setAdapter(reviewAdapter);
+
     }
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
