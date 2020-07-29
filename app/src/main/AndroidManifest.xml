@@ -8,7 +8,7 @@
         android:name=".MyApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher_gabaekseo"
-        android:label="@string/app_name"
+        android:label="Gabaekseo"
         android:roundIcon="@mipmap/ic_launcher_gabaekseo_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
