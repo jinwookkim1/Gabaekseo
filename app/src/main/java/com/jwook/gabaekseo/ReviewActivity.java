@@ -41,15 +41,26 @@ public class ReviewActivity extends AppCompatActivity {
     }
 
     public void clickRev(View view) {
-        Intent intent = getIntent();
-        this.setResult(RESULT_OK, intent);
-        intent.putExtra("review", et.getText().toString());
+
+        //저장할 데이터
+        String msg = et.getText().toString();
+        String profileUrl= G.imgUrl;
+        String profileName= G.nickName;
+
+        SharedPreferences shared1 = getSharedPreferences("Data", MODE_PRIVATE);
+
+        String data = shared1.getString("revs", "");
+        data += profileName+"&"+msg+"&"+profileUrl+";";
+
+
+        SharedPreferences.Editor editor = shared1.edit();
+        editor.putString("revs", data);
+        editor.commit();
+
+        Intent intent= new Intent(this, InfoActivity.class);
+        startActivity(intent);
 
         Toast.makeText(this, "리뷰작성 완료", Toast.LENGTH_SHORT).show();
-        finish();
-
-
-
 
     }
 }

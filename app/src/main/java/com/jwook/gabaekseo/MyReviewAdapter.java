@@ -49,7 +49,7 @@ public class MyReviewAdapter extends RecyclerView.Adapter {
 
     @Override
     public int getItemCount() {
-        return 0;
+        return reItems.size();
     }
 
 

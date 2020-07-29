@@ -95,17 +95,39 @@ public class InfoActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
 
-
         reviewAdapter = new MyReviewAdapter(this, reItems);
         recyclerView = findViewById(R.id.info_recycle);
         recyclerView.setAdapter(reviewAdapter);
 
+
+
+
+
     }
 
     @Override
-    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
+    protected void onResume() {
+
+        super.onResume();
+
+        reItems.clear();
+        reviewAdapter.notifyDataSetChanged();
+
+        SharedPreferences shared1 = getSharedPreferences("Data", MODE_PRIVATE);
+        String rev = shared1.getString("revs", "");
+        String[] revs = rev.split(";");
+
+        for(int i = 0; i < revs.length; i++){
+            String[] revs1 = revs[i].split("&");
+            if( revs1.length != 3) continue;
+
+            ReItem reItem = new ReItem(revs1[0], revs1[1], revs1[2]);
+            reItems.add(reItem);
+            reviewAdapter.notifyItemInserted(reItems.size()-1);
+        }
     }
+
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

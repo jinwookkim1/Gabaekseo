@@ -5,10 +5,10 @@ public class ReItem {
     String reView;
     String reUrl;
 
-    public ReItem(String reName, String reView, String rUrl){
+    public ReItem(String reName, String reView, String reUrl){
         this.reName = reName;
         this.reView = reView;
-        this.reUrl = rUrl;
+        this.reUrl = reUrl;
 
     }
     public ReItem(){
